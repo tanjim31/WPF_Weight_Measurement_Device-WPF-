@@ -1,0 +1,44 @@
+﻿<Window x:Class="WPFUSB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFUSB"
+        mc:Ignorable="d"
+        Title="Wireless Weight Machine App" Height="500" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Wireless Weight Machine App" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10"/>
+
+        <!--<ListBox x:Name="deviceListBox" Grid.Row="1" Width="200" Height="100" Margin="-766,10,0,0" SelectionChanged="DeviceListBox_SelectionChanged"/>-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Text="Device Name" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,190,0"/>
+            <ListBox x:Name="deviceListBox" Grid.Column="0" Width="200" Height="100" Margin="106,40,300,0" SelectionChanged="DeviceListBox_SelectionChanged"/>
+
+            <Label Grid.Column="1" Content="Weight :" FontSize="16" FontWeight="Bold" VerticalAlignment="Top" Height="60" Margin="-110,8,0,0"/>
+            <TextBox x:Name="weightTextBox" Grid.Column="1" Width="100" Height="34" FontSize="18" FontWeight="Bold" Margin="-30,0,0,90" TextChanged="weightTextBox_TextChanged"/>
+        </Grid>
+
+        <Label Content="Vehicle No" Grid.Row="2" HorizontalAlignment="Left" Margin="12,10,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="80" Height="30"/>
+        <Label Content="Chalan No" Grid.Row="3" HorizontalAlignment="Left" Margin="12,50,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="80" Height="30"/>
+        <Label Content="Date" Grid.Row="4" HorizontalAlignment="Left" Margin="12,90,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Width="80" Height="30"/>
+        <TextBox x:Name="vehicleNo_txt" Grid.Row="2" HorizontalAlignment="Left" Margin="106,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="30" TextChanged="TextBox_TextChanged" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="ChalanNo_txt" Grid.Row="3" HorizontalAlignment="Left" Margin="106,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="30" TextChanged="TextBox_TextChanged" FontSize="14" FontWeight="Bold"/>
+        <DatePicker x:Name="Date_txt" Grid.Row="4" HorizontalAlignment="Left" Margin="106,90,0,0" VerticalAlignment="Top" Width="218" Height="30" FontSize="14" FontWeight="Bold" SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+
+        <DataGrid x:Name="datagrid1" Grid.Row="5" HorizontalAlignment="Left" Height="75" Margin="20,140,0,0" VerticalAlignment="Top" Width="439" AutoGenerateColumns="True" SelectionChanged="datagrid1_SelectionChanged"/>
+        <Button x:Name="SaveBtn" Content="Save" Grid.Row="6"    HorizontalAlignment="Left" Margin="20,0,0,10" VerticalAlignment="Bottom" Width="75" Height="26" FontWeight="Bold" FontSize="14" Background="#FFCA4848" Click="SaveBtn_Click" />
+        <Button x:Name="ClearBtn" Content="Clear" Grid.Row="6"    HorizontalAlignment="Left" Margin="120,0,0,10" VerticalAlignment="Bottom" Width="75" Height="26" FontWeight="Bold" FontSize="14" Background="#FFCA4848" Click="ClearBtn_Click" />
+        <DataGrid x:Name="datagrid2" Grid.Row="7" HorizontalAlignment="Left" Height="160" Margin="500,60,0,0"  VerticalAlignment="Top" Width="439" SelectionChanged="datagrid2_SelectionChanged"/>
+
+    </Grid>
+</Window> 
+    
